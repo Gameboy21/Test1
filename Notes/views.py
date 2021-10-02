@@ -3,6 +3,7 @@ from django.contrib.auth import logout, authenticate, login
 from rest_framework import serializers
 from .models import User_Selection
 from .serializers import employeeserializer
+from rest_framework import Response
 
 #from
 # Create your views here.
@@ -53,4 +54,4 @@ def logoutUser(request):
 def api_test(request):
     employees1 = User_Selection.objects.all()
     serializer = employeeserializer(employees1, many=True)
-    return (serializer.data)    
+    return Response(serializer.data)    
