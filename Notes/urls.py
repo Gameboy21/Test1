@@ -21,6 +21,7 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('contact',views.query,name='query'),
     path('login',views.loginuser,name='login'),
-    path('logout',views.logoutUser,name='logout')
+    path('logout',views.logoutUser,name='logout'),
+    path('api/test',views.api_test,name='apitest')
 
 ]

@@ -1,5 +1,8 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth import logout, authenticate, login
+from rest_framework import serializers
+from .models import User_Selection
+from .serializers import employeeserializer
 
 #from
 # Create your views here.
@@ -46,3 +49,8 @@ def loginuser(request):
 def logoutUser(request):
     logout(request)
     return redirect("/login")
+    
+def api_test(request):
+    employees1 = User_Selection.objects.all()
+    serializer = employeeserializer(employees1, many=True)
+    return (serializer.data)    
