@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+
+{%block title%} RaaS {% endblock title%}
+{%block placeholder%} <a href="/logout">Logout</a> {% endblock placeholder%}
+{%block body%}
+
+
+<div class="container-fluid mt-3 " style="min-height: 400px; max-width:600px">
+  <div class="row text-center">
+    <div class="col">
+        <h1 class="display-6">RaaS Health Check Tool</h1>
+    </div>
+  </div>
+    <div class="row align-items-center mt-5 text-center">
+    <div class="col">
+        <h5>Select Customer</h5>
+      </div>
+      <div class="col">
+      <select class="form-select" style="max-width: 320px;" aria-label=".form-select-sm example">
+  <option selected></option>
+  <option value="1">Telefonica</option>
+  <option value="2">Singtel</option>
+  <option value="3">AT&T</option>
+</select>
+        </div>
+    </div>
+  <div class="row text-center">
+    <div class="col">
+        <h5>Activity Type</h5>
+      </div>
+    <div class="col">
+      <select class="form-select" style="max-width: 320px;" aria-label=".form-select-sm example">
+          <option selected></option>
+  <option value="1">Health-Check</option>
+  <option value="2">Credential Update</option>
+</select>
+        </div>
+    </div>
+<div class="row text-center">
+    <div class="col">
+        <h5>Type of Health Check</h5>
+    </div>
+    <div class="col">
+      <select class="form-select" name="typeofhc" style="max-width: 320px;" aria-label=".form-select-sm example">
+  <option selected></option>
+  <option value="1">Pre-Check</option>
+  <option value="2">Post-Check</option>
+  <option value="3">Bulk Pre-Check</option>
+</select>
+        </div>
+    </div>
+    <div class="row py-3">
+<div class="col px-10 pull-right form-check form-switch">
+    <div class="container" style="width:200px">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Fetch Fresh Logs</label>
+        </div>
+</div>
+        </div>
+    <div class="row text-center py-2">
+    <div class="col">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:120px">Run</button>
+
+      </div>
+      </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Please confirm..</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Do you want to proceed with the current selections?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ><a href="/contact">Yes </a></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{%endblock%}
