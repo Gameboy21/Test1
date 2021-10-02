@@ -4,6 +4,7 @@ from rest_framework import serializers
 from .models import User_Selection
 from .serializers import employeeserializer
 from rest_framework import Response
+from rest_framework.decorators import api_view
 
 #from
 # Create your views here.
@@ -50,7 +51,8 @@ def loginuser(request):
 def logoutUser(request):
     logout(request)
     return redirect("/login")
-    
+
+@api_view(['GET'])
 def api_test(request):
     employees1 = User_Selection.objects.all()
     serializer = employeeserializer(employees1, many=True)
