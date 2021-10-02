@@ -3,7 +3,7 @@ from django.contrib.auth import logout, authenticate, login
 from rest_framework import serializers
 from .models import User_Selection
 from .serializers import employeeserializer
-from rest_framework import Response
+from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 #from
